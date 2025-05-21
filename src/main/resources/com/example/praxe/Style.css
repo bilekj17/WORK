@@ -1,0 +1,19 @@
+.root{
+    /*-fx-background-image: url("/Image/pokus.png");*/
+    -fx-background-color: #3373b9;
+    -fx-background-repeat: no-repeat;
+    -fx-background-size: cover;
+    -fx-background-position: center center;
+}
+/*.label {
+    font-family: Impact;
+    font-size: 14px;
+    font-weight: normal;
+    color: black;
+    padding: 8px 16px;
+    border-radius: 4px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+    display: inline-block;
+}
