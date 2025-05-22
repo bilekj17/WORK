@@ -45,31 +45,31 @@ public class HelloController {
     }
 
     private void generateCards() {
-        cards.add(new Card(1, "Component 1.png"));
-        cards.add(new Card(2, "Component 1 (1).png"));
-        cards.add(new Card(3, "component 2.png"));
-        cards.add(new Card(4, "component 3.png"));
-        cards.add(new Card(5, "component 4.png"));
-        cards.add(new Card(6, "component 5.png"));
-        cards.add(new Card(7, "component 6.png"));
-        cards.add(new Card(8, "component 7.png"));
-        cards.add(new Card(9, "component 8.png"));
-        cards.add(new Card(10, "component 10.png"));
-        cards.add(new Card(11, "component 11.png"));
-        cards.add(new Card(12, "component 12.png"));
+        cards.add(new Card(1, "Component1.png"));
+        cards.add(new Card(2, "Component1(1).png"));
+        cards.add(new Card(3, "Component2.png"));
+        cards.add(new Card(4, "Component3.png"));
+        cards.add(new Card(5, "Component4.png"));
+        cards.add(new Card(6, "Component5.png"));
+        cards.add(new Card(7, "Component6.png"));
+        cards.add(new Card(8, "Component7.png"));
+        cards.add(new Card(9, "Component8.png"));
+        cards.add(new Card(10, "Component10.png"));
+        cards.add(new Card(11, "Component11.png"));
+        cards.add(new Card(12, "Component12.png"));
 
-        cards.add(new Card(1, "Component 1.png"));
-        cards.add(new Card(2, "Component 1 (1).png"));
-        cards.add(new Card(3, "component 2.png"));
-        cards.add(new Card(4, "component 3.png"));
-        cards.add(new Card(5, "component 4.png"));
-        cards.add(new Card(6, "component 5.png"));
-        cards.add(new Card(7, "component 6.png"));
-        cards.add(new Card(8, "component 7.png"));
-        cards.add(new Card(9, "component 8.png"));
-        cards.add(new Card(10, "component 10.png"));
-        cards.add(new Card(11, "component 11.png"));
-        cards.add(new Card(12, "component 12.png"));
+        cards.add(new Card(1, "Component1.png"));
+        cards.add(new Card(2, "Component1(1).png"));
+        cards.add(new Card(3, "Component2.png"));
+        cards.add(new Card(4, "Component3.png"));
+        cards.add(new Card(5, "Component4.png"));
+        cards.add(new Card(6, "Component5.png"));
+        cards.add(new Card(7, "Component6.png"));
+        cards.add(new Card(8, "Component7.png"));
+        cards.add(new Card(9, "Component8.png"));
+        cards.add(new Card(10, "Component10.png"));
+        cards.add(new Card(11, "Component11.png"));
+        cards.add(new Card(12, "Component12.png"));
     }
     private void displayCards() {
         grid.getChildren().clear();
