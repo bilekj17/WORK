@@ -14,12 +14,12 @@
       </VBox>
    </center>
    <right>
-      <VBox prefHeight="400.0" prefWidth="213.0" BorderPane.alignment="CENTER">
+      <VBox prefHeight="400.0" prefWidth="287.0" BorderPane.alignment="CENTER">
          <children>
-            <Label fx:id="hrac2" prefHeight="50.0" prefWidth="157.0" text="Hráč 2:" />
-            <Label fx:id="hrac1" prefHeight="18.0" prefWidth="138.0" text="Hráč 1: " />
-            <Label fx:id="onlinePlayer" prefHeight="60.0" prefWidth="105.0" text="Hrající: " />
-            <Label fx:id="vitez" prefHeight="18.0" prefWidth="201.0" text="Výherce: " />
+            <Label fx:id="hrac2" prefHeight="50.0" prefWidth="284.0" text="Hráč 2:" />
+            <Label fx:id="hrac1" prefHeight="18.0" prefWidth="274.0" text="Hráč 1: " />
+            <Label fx:id="onlinePlayer" prefHeight="60.0" prefWidth="252.0" text="Hrající: " />
+            <Label fx:id="vitez" prefHeight="18.0" prefWidth="323.0" text="Výherce: " />
          </children>
       </VBox>
    </right>

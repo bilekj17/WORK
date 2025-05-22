@@ -123,10 +123,10 @@ public class HelloController {
             secondCard = null;
             if(currentPlayer ==1){
                 score1++;
-                hrac1.setText("Hrač 1:" + score1);
+                hrac1.setText("Hrač 1: " + score1);
             }else if(currentPlayer ==2){
                 score2++;
-                hrac2.setText("hráč 2:" + score2);
+                hrac2.setText("hráč 2: " + score2);
             }
             if (isGameOver() == true){
                 if (score1>score2){
