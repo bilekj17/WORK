@@ -5,13 +5,13 @@ import javafx.animation.ScaleTransition;
 import javafx.animation.SequentialTransition;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.geometry.Insets;
+import javafx.geometry.Pos;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import javafx.scene.layout.ColumnConstraints;
-import javafx.scene.layout.GridPane;
-import javafx.scene.layout.RowConstraints;
+import javafx.scene.layout.*;
 import javafx.util.Duration;
 
 import java.util.ArrayList;
@@ -28,6 +28,8 @@ public class HelloController {
     private Label onlinePlayer;
     @FXML
     private GridPane grid;
+    @FXML
+    private VBox VBox;
 
 
     private ArrayList<Card> cards = new ArrayList<>();
@@ -50,32 +52,36 @@ public class HelloController {
     private void generateCards() {
         cards.add(new Card(1, "Component1.png"));
         cards.add(new Card(2, "Component1(1).png"));
-        cards.add(new Card(3, "Component2.png"));
-        cards.add(new Card(4, "Component3.png"));
-        cards.add(new Card(5, "Component4.png"));
-        cards.add(new Card(6, "Component5.png"));
-        cards.add(new Card(7, "Component6.png"));
-        cards.add(new Card(8, "Component7.png"));
-        cards.add(new Card(9, "Component8.png"));
-        cards.add(new Card(10, "Component10.png"));
-        cards.add(new Card(11, "Component11.png"));
-        cards.add(new Card(12, "Component13.png"));
+        cards.add(new Card(3, "Component4.png"));
+        cards.add(new Card(4, "Component5.png"));
+        cards.add(new Card(5, "Component66.png"));
+        cards.add(new Card(6, "Component7.png"));
+        cards.add(new Card(7, "Component8.png"));
+        cards.add(new Card(8, "Component11.png"));
+        cards.add(new Card(9, "Component10.png"));
+        cards.add(new Card(10, "Component13.png"));
+        cards.add(new Card(11, "Component14.png"));
+        cards.add(new Card(12, "Component55.png"));
 
         cards.add(new Card(1, "Component1.png"));
         cards.add(new Card(2, "Component1(1).png"));
-        cards.add(new Card(3, "Component2.png"));
-        cards.add(new Card(4, "Component3.png"));
-        cards.add(new Card(5, "Component4.png"));
-        cards.add(new Card(6, "Component5.png"));
-        cards.add(new Card(7, "Component6.png"));
-        cards.add(new Card(8, "Component7.png"));
-        cards.add(new Card(9, "Component8.png"));
-        cards.add(new Card(10, "Component10.png"));
-        cards.add(new Card(11, "Component11.png"));
-        cards.add(new Card(12, "Component13.png"));
+        cards.add(new Card(3, "Component4.png"));
+        cards.add(new Card(4, "Component5.png"));
+        cards.add(new Card(5, "Component66.png"));
+        cards.add(new Card(6, "Component7.png"));
+        cards.add(new Card(7, "Component8.png"));
+        cards.add(new Card(8, "Component11.png"));
+        cards.add(new Card(9, "Component10.png"));
+        cards.add(new Card(10, "Component13.png"));
+        cards.add(new Card(11, "Component14.png"));
+        cards.add(new Card(12, "Component55.png"));
     }
     private void displayCards() {
         grid.getChildren().clear();
+        VBox.setAlignment(Pos.CENTER);
+        VBox.setPadding(new Insets(20, 50, 20, 50));
+        grid.setVgap(10);
+        grid.setHgap(10);
         int index = 0;
 
         for (int row = 0; row < 4; row++) {
@@ -139,10 +145,10 @@ public class HelloController {
             secondCard=null;
             if (currentPlayer ==1){
                 currentPlayer=2;
-                onlinePlayer.setText("Hráč: "+currentPlayer);
+                onlinePlayer.setText("Hráč: "+currentPlayer+" je na řadě");
             } else if(currentPlayer ==2) {
                 currentPlayer = 1;
-                onlinePlayer.setText("Hráč: "+currentPlayer);
+                onlinePlayer.setText("Hráč: "+currentPlayer+" je na řadě");
             }
 
 
