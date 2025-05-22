@@ -39,6 +39,7 @@ public class HelloController {
 
     @FXML
     public void initialize() {
+
         generateCards();
         Collections.shuffle(cards);
         displayCards();
@@ -46,9 +47,9 @@ public class HelloController {
 
     private void generateCards() {
         cards.add(new Card(1, "Component1.png"));
-        cards.add(new Card(2, "Component1(1).png"));
-        cards.add(new Card(3, "Component2.png"));
-        cards.add(new Card(4, "Component3.png"));
+        cards.add(new Card(2, "Component1.png"));
+        cards.add(new Card(3, "Component1.png"));
+        cards.add(new Card(4, "Component1.png"));
         cards.add(new Card(5, "Component4.png"));
         cards.add(new Card(6, "Component5.png"));
         cards.add(new Card(7, "Component6.png"));
@@ -59,10 +60,10 @@ public class HelloController {
         cards.add(new Card(12, "Component12.png"));
 
         cards.add(new Card(1, "Component1.png"));
-        cards.add(new Card(2, "Component1(1).png"));
-        cards.add(new Card(3, "Component2.png"));
-        cards.add(new Card(4, "Component3.png"));
-        cards.add(new Card(5, "Component4.png"));
+        cards.add(new Card(2, "Component1.png"));
+        cards.add(new Card(3, "Component1.png"));
+        cards.add(new Card(4, "Component1.png"));
+        cards.add(new Card(5, "Component1.png"));
         cards.add(new Card(6, "Component5.png"));
         cards.add(new Card(7, "Component6.png"));
         cards.add(new Card(8, "Component7.png"));
@@ -75,14 +76,17 @@ public class HelloController {
         grid.getChildren().clear();
         int index = 0;
 
-        for (int row = 0; row < 6; row++) {
-            for (int col = 0; col < 4; col++) {
+        for (int row = 0; row < 4; row++) {
+            for (int col = 0; col < 6; col++) {
                 Card card = cards.get(index++);
                 Button btn = card.getButton();
                 btn.setOnAction((e -> handleCardClick(card)));
                 grid.add(btn, col, row);
+             //   grid.getColumnConstraints().add(col, new ColumnConstraints(100, 100, 100));
             }
+          //  grid.getRowConstraints().add(row, new RowConstraints(100, 100, 100));
         }
+
     }
 
     private void handleCardClick(Card card) {

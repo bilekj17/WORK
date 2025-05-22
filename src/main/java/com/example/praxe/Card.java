@@ -15,7 +15,7 @@ public class Card {
     public Card(int id, String imagePath) {
         this.id = id;
         this.button = new Button();
-
+        this.button.setPrefSize(200, 200);
 
         this.frontImage = new Image(getClass().getResourceAsStream("/Image/"+imagePath));
         this.backImage = new Image(getClass().getResourceAsStream("/Image/Component12.png"));
@@ -31,10 +31,18 @@ public class Card {
     }
 
     public void flip() {
-        button.setGraphic(new ImageView(frontImage));
+        ImageView view = new ImageView(frontImage);
+        view.setFitWidth(100);
+       // view.setFitHeight(100);
+        view.setPreserveRatio(true);
+        button.setGraphic(view);
     }
     public void flipback(){
-        button.setGraphic(new ImageView(backImage));
+        ImageView view = new ImageView(backImage);
+        view.setFitWidth(100);
+        view.setFitHeight(100);
+        view.setPreserveRatio(true);
+        button.setGraphic(view);
     }
 
     public boolean isMatched() {
