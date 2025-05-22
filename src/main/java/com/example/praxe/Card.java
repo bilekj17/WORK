@@ -1,7 +1,10 @@
 package com.example.praxe;
+import javafx.animation.ScaleTransition;
+import javafx.animation.SequentialTransition;
 import javafx.scene.control.Button;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.util.Duration;
 
 public class Card {
     private final int id;
@@ -29,20 +32,44 @@ public class Card {
     public Button getButton() {
         return button;
     }
-
     public void flip() {
-        ImageView view = new ImageView(frontImage);
-        view.setFitWidth(100);
-       // view.setFitHeight(100);
-        view.setPreserveRatio(true);
-        button.setGraphic(view);
+        ScaleTransition shrink = new ScaleTransition(Duration.millis(150), button);
+        shrink.setFromX(1);
+        shrink.setToX(0);
+
+        ScaleTransition expand = new ScaleTransition(Duration.millis(150), button);
+        expand.setFromX(0);
+        expand.setToX(1);
+
+        shrink.setOnFinished(e -> {
+            ImageView view = new ImageView(frontImage);
+            view.setFitWidth(200);
+            view.setFitHeight(200);
+            view.setPreserveRatio(true);
+            button.setGraphic(view);
+        });
+
+        new SequentialTransition(shrink, expand).play();
     }
+
     public void flipback(){
-        ImageView view = new ImageView(backImage);
-        view.setFitWidth(100);
-        view.setFitHeight(100);
-        view.setPreserveRatio(true);
-        button.setGraphic(view);
+        ScaleTransition shrink = new ScaleTransition(Duration.millis(150), button);
+        shrink.setFromX(1);
+        shrink.setToX(0);
+
+        ScaleTransition expand = new ScaleTransition(Duration.millis(150), button);
+        expand.setFromX(0);
+        expand.setToX(1);
+
+        shrink.setOnFinished(e -> {
+            ImageView view = new ImageView(backImage);
+            view.setFitWidth(200);
+            view.setFitHeight(200);
+            view.setPreserveRatio(true);
+            button.setGraphic(view);
+        });
+
+        new SequentialTransition(shrink, expand).play();
     }
 
     public boolean isMatched() {
@@ -68,4 +95,5 @@ public class Card {
     public void setFlipped(boolean flipped) {
         this.flipped = flipped;
     }
+
 }

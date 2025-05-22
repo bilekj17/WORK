@@ -1,6 +1,8 @@
 package com.example.praxe;
 
 import javafx.animation.PauseTransition;
+import javafx.animation.ScaleTransition;
+import javafx.animation.SequentialTransition;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
@@ -47,9 +49,9 @@ public class HelloController {
 
     private void generateCards() {
         cards.add(new Card(1, "Component1.png"));
-        cards.add(new Card(2, "Component1.png"));
-        cards.add(new Card(3, "Component1.png"));
-        cards.add(new Card(4, "Component1.png"));
+        cards.add(new Card(2, "Component1(1).png"));
+        cards.add(new Card(3, "Component2.png"));
+        cards.add(new Card(4, "Component3.png"));
         cards.add(new Card(5, "Component4.png"));
         cards.add(new Card(6, "Component5.png"));
         cards.add(new Card(7, "Component6.png"));
@@ -57,20 +59,20 @@ public class HelloController {
         cards.add(new Card(9, "Component8.png"));
         cards.add(new Card(10, "Component10.png"));
         cards.add(new Card(11, "Component11.png"));
-        cards.add(new Card(12, "Component12.png"));
+        cards.add(new Card(12, "Component13.png"));
 
         cards.add(new Card(1, "Component1.png"));
-        cards.add(new Card(2, "Component1.png"));
-        cards.add(new Card(3, "Component1.png"));
-        cards.add(new Card(4, "Component1.png"));
-        cards.add(new Card(5, "Component1.png"));
+        cards.add(new Card(2, "Component1(1).png"));
+        cards.add(new Card(3, "Component2.png"));
+        cards.add(new Card(4, "Component3.png"));
+        cards.add(new Card(5, "Component4.png"));
         cards.add(new Card(6, "Component5.png"));
         cards.add(new Card(7, "Component6.png"));
         cards.add(new Card(8, "Component7.png"));
         cards.add(new Card(9, "Component8.png"));
         cards.add(new Card(10, "Component10.png"));
         cards.add(new Card(11, "Component11.png"));
-        cards.add(new Card(12, "Component12.png"));
+        cards.add(new Card(12, "Component13.png"));
     }
     private void displayCards() {
         grid.getChildren().clear();
@@ -90,22 +92,23 @@ public class HelloController {
     }
 
     private void handleCardClick(Card card) {
-        if(!canFlip || card.isMatched() || card.isFlipped()){
+        if (!canFlip || card.isMatched() || card.isFlipped()){
             return;
         }
         card.flip();
-        if(firstCard == null){
+
+        if (firstCard == null) {
             firstCard = card;
-        }else{
+        }else {
             secondCard = card;
             canFlip = false;
-            PauseTransition pause = new PauseTransition(Duration.seconds(2));
+
+            PauseTransition pause = new PauseTransition(Duration.seconds(1));
             pause.setOnFinished(e -> Checkcards());
             pause.play();
-
-
         }
     }
+
     public void Checkcards(){
         if(firstCard.getId() == secondCard.getId()){
             firstCard.setMatched(true);

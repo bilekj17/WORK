@@ -7,19 +7,22 @@
    <top>
       <HBox maxHeight="100.0" maxWidth="100.0">
          <children>
-            <Label fx:id="vitez" text="Výherce: " />
-            <Label fx:id="onlinePlayer" text="Hrající: " />
-            <VBox>
-               <children>
-                  <Label fx:id="hrac1" text="Hráč 1: " />
-                  <Label fx:id="hrac2" text="Hráč 2:" />
-               </children>
-            </VBox>
+            <VBox />
          </children>
       </HBox>
    </top>
    <center>
-      <GridPane fx:id="grid" >
+      <GridPane fx:id="grid">
       </GridPane>
    </center>
+   <right>
+      <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+         <children>
+            <Label fx:id="hrac2" prefHeight="50.0" prefWidth="37.0" text="Hráč 2:" />
+            <Label fx:id="hrac1" prefHeight="18.0" prefWidth="55.0" text="Hráč 1: " />
+            <Label fx:id="onlinePlayer" prefHeight="60.0" prefWidth="40.0" text="Hrající: " />
+            <Label fx:id="vitez" prefHeight="18.0" prefWidth="167.0" text="Výherce: " />
+         </children>
+      </VBox>
+   </right>
 </BorderPane>
