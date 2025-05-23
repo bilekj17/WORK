@@ -10,10 +10,15 @@
     -fx-font-family: Impact;
     -fx-font-size: 20px;
     -fx-font-weight: bold;
-    -fx-color: white;
+    -fx-text-fill: #32ADE6;
     -fx-letter-spacing: 1px;
 }
 
-.vitez{
-    -fx-color: gold;
+#vitez{
+    -fx-text-fill: gold;
 }
+
+#onlinePlayer{
+    -fx-text-fill: #06d806;
+}
+

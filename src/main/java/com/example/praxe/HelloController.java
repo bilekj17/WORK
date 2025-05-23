@@ -79,9 +79,9 @@ public class HelloController {
     private void displayCards() {
         grid.getChildren().clear();
         VBox.setAlignment(Pos.CENTER);
-        VBox.setPadding(new Insets(20, 50, 20, 50));
-        grid.setVgap(10);
-        grid.setHgap(10);
+        VBox.setPadding(new Insets(20, 20, 20, 20));
+        grid.setVgap(5);
+        grid.setHgap(5);
         int index = 0;
 
         for (int row = 0; row < 4; row++) {
@@ -105,14 +105,39 @@ public class HelloController {
 
         if (firstCard == null) {
             firstCard = card;
-        }else {
+        }else if (secondCard == null) {
             secondCard = card;
+            if (firstCard == secondCard){
+                PauseTransition pause = new PauseTransition(Duration.seconds(1));
+                pause.setOnFinished(e -> {
+                    firstCard.flipback();
+                    resetTurn();
+                    switchPlayer();
+                    canFlip = true;
+                });
+                pause.play();
+                return;
+            }
             canFlip = false;
 
-            PauseTransition pause = new PauseTransition(Duration.seconds(1));
+            PauseTransition pause = new PauseTransition(Duration.seconds(0.5));
             pause.setOnFinished(e -> Checkcards());
             pause.play();
         }
+    }
+
+    public void resetTurn(){
+        firstCard = null;
+        secondCard = null;
+    }
+
+    public void switchPlayer(){
+        if (currentPlayer == 1){
+            currentPlayer = 2;
+        }else{
+            currentPlayer = 1;
+        }
+        onlinePlayer.setText("Hráč: " + currentPlayer + " je na řadě");
     }
 
     public void Checkcards(){
@@ -140,19 +165,10 @@ public class HelloController {
         }else{
             firstCard.flipback();
             secondCard.flipback();
-
-            firstCard=null;
-            secondCard=null;
-            if (currentPlayer ==1){
-                currentPlayer=2;
-                onlinePlayer.setText("Hráč: "+currentPlayer+" je na řadě");
-            } else if(currentPlayer ==2) {
-                currentPlayer = 1;
-                onlinePlayer.setText("Hráč: "+currentPlayer+" je na řadě");
-            }
-
-
+            switchPlayer();
         }
+
+        resetTurn();
         canFlip = true;
 
         System.out.println(score1);
